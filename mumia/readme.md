@@ -1,9 +1,11 @@
 Wejście
 
 W pierwszej linijce znajduje się jedna liczba n (1 ≤ n ≤ 50) oznaczajaca rozmiar komnaty. W kolejnych n linijkach znajduje się po n liczb z zakresu od 0 do 9 stanowiących opis komnaty. Mumia znajduje się w górnym lewym rogu. Jej sarkofag w prawym dolnym.
+
 Wyjście
 
 Wypisz jedną liczbę określającą najmniejszą sumę w jakiej mumia może najkrótszą ścieżką dojść do sarkofagu.
+
 Przykład
 
 Dla danych wejściowych
@@ -12,7 +14,9 @@ Dla danych wejściowych
 3 2
 poprawną odpowiedzią jest
 4
+
 Najlepsza ścieżka to 1 + 1 + 2.
+
 Dla danych wejściowych
 5
 0 0 1 1 1
