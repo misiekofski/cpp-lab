@@ -1,30 +1,57 @@
-#include <iostream>
 #include "matrix.h"
-int main(int argc, char *argv[])
+#include <iostream>
+matrix::matrix()
 {
-matrix a;
-//a.print();
-//std::cout<<"\n";
-matrix b(1);
-//b.print();
-//std::cout<<"\n";
-double tabelka[3][3]={{1,2,3},{4,5,6},{7,8,9}};
-matrix d(tabelka);
+for (int wiersz=0; wiersz<N_ROW; ++wiersz){
+for(int kolumna=0; kolumna<N_COL; ++kolumna)
+tablica[wiersz][kolumna]=0;
+}
+}
+matrix::matrix(double diag)
+{
+for (int wiersz=0; wiersz<N_ROW; ++wiersz){
+for(int kolumna=0; kolumna<N_COL; ++kolumna)
+tablica[wiersz][kolumna]=0;
+}
+for (int i=0; i<N_ROW; ++i) {
+tablica[i][i]=diag;
+}
+}
+matrix::matrix(double tab[N_ROW][N_COL])
+{
+for (int wiersz=0; wiersz<N_ROW; ++wiersz){
+for(int kolumna=0; kolumna<N_COL; ++kolumna)
+tablica[wiersz][kolumna]=tab[wiersz][kolumna];
+}
+}
+/*matrix::matrix(matrix &k)
+{
+}
+*/
+void matrix::print()
+{
+for (int wiersz=0; wiersz<N_ROW; ++wiersz){
+for(int kolumna=0; kolumna<N_COL; ++kolumna){
+std::cout<<tablica[wiersz][kolumna]<<"\t";
+}
+std::cout<<"\n";
+}
+}
+void matrix::t(){
+double temp;
+for (int wiersz=0; wiersz < N_ROW-1; ++wiersz)
+for (int kolumna=wiersz+1; kolumna<N_COL; ++kolumna) {
+temp = tablica[wiersz][kolumna];
+tablica[wiersz][kolumna]=tablica[kolumna][wiersz];
+tablica[kolumna][wiersz]=temp;
+}
+}
 
-a=dodawanie(b,d);
-a.print();
+matrix operator+(const matrix &b){
+matrix wynik;
+for (int wiersz=0; wiersz<Matrix::n_row;++wiersz)
+    for (int kolumna=0; kolumna<matrix::n_col;++kolumna)
+        wynik.put (wiersz,kolumna, get(wiersz,kolumna)+b.get(wiersz,kolumna));
 
-// d.print();
-// std::cout << "\n po transponowaniu \n";
-// d.t();
-// d.print();
-
-// std::cout<<"\n";
-// std::cout<< "element 1,2 to :" << d.get(1,2) << std::endl;
-// d.put(1,2,34);
-// std::cout<< "element 1,2 po zmianie to :" << d.get(1,2);
-//double **p=tabelka;
-//matrix c(p);
-//c.print();
-return 0;
+        return wynik;
 }
