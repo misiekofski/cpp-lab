@@ -23,6 +23,14 @@ static const int N_COL=3; //value has to be declared during const declaration
 double tablica[N_ROW][N_COL];
 //std::vector<std::vector<double>> tablica;
 
+matrix operator+(const matrix &a, const matrix &b){
+matrix wynik;
+for (int wiersz=0; wiersz<Matrix::n_row;++wiersz)
+    for (int kolumna=0; kolumna<matrix::n_col;++kolumna)
+        wynik.put (wiersz,kolumna, a.get(wiersz,kolumna)+b.get(wiersz,kolumna));
+
+        return wynik;
+}
 
 matrix dodawanie (const matrix &a, const matrix &b){
 matrix wynik;
