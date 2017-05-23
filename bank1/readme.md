@@ -17,7 +17,7 @@ Wypisz najmniejszą liczbę potrzebnych banknotów do wypłacenia kwoty k, lub -
 3
 
 
-## Bank 2
+## Bank 3
 Bajtocki Bank Bitowy (w skrócie BBB) ma największą w Bajtocji sieć bankomatów. BBB postanowił usprawnić swoje bankomaty i zwrócił się do Ciebie o pomoc. Środkiem płatniczym w Bajtocji są banknoty o nominałach b_1, b_2, …, b_n. BBB postanowił, że bankomaty powinny wypłacać żądaną kwotę w jak najmniejszej łącznej liczbie banknotów.
 
 ## Wejście
